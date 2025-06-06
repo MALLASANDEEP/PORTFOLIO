@@ -3,32 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - [M.SANDEEP]</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>PORTFOLIO-M.SANDEEP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+       
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #6ecf95, #66df3d);
+    background-size: cover;
+
+}
+.container {
+    display: flex;
+    margin-top: 20px ;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 150px;
+    background-color: #050505;
+    position: fixed;
+    top: 0;
+    left: -250px; 
+    transition: 0.3s;
+    padding-top: 60px;
+    z-index: 1;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li a {
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(246, 244, 244);
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: gray;
+    border-radius: 25px;
+}
+
+.sidebar .closebtn {
+    font-size: 36px;
+    color: white;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.main-content {
+    margin-left: 0px;
+    transition: margin-left 0.3s;
+    padding: 20px;
+    z-index: 0;
+}
+
+
+.hamburger {
+    font-size: 30px;
+    background: none;
+    border: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color:whitesmoke;
+    z-index: 2; 
+    cursor: pointer;
+}
+
+.sidebar.open 
+{
+    left: 0;
+}
+
+.main-content.shifted 
+{
+    margin-left: 250px;
+}
+h1
+{
+    color: palegreen;
+}
+p
+{
+   color: whitesmoke;
+}
+ img
+ {
+    height: 350px;
+    width:350px;
+    border-radius: 50%;
+    position: left;
+    float: left;
+    margin-right: 450px;
+    margin-bottom: 100PX;
+    box-shadow: 0  2PX 10PX;
+    
+}
+h1
+{
+    float: right;
+    margin-right:40px ;
+    margin-top: 60px;
+    color: var(#a15196);
+    margin-left: 0px;
+    font-size: 40px;
+    text-align: left;
+}
+
+
+</style>
 </head>
+
 <body>
-
-    <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="ABOUT.HTML">About Me</a></li>
-            <li><a href="INDEX.HTML">Home</a></li>
-            <li><a href="SKILLS.HTML">Skills</a></li>
-            <li><a href="PROJECTS.HTML">Projects</a></li>
-            <li><a href="CONTACT.HTML">Contact</a></li>
-            <li><a href="RESUME.HTML">Resume</a></li>
-        </ul>
-    </nav>
-
-    <!-- Main Section -->
-    <section id="main">
-        <div class="intro">
-            <img src="C:\Users\malla\OneDrive\文档\san1.jpg" alt="Your Photo" class="profile-img">
-            <h1>Hi, I'm [SANDEEP]</h1>
-            <p>BTech in Computer Science and Engineering</p>
-            <p>Passionate about technology and software development.</p>
+    <div class="container">
+        <div class="sidebar">
+            <button class="closebtn" onclick="toggleSidebar()">&times;</button>
+            <ul>
+                <li><a href="INDEX.HTML">HOME</a></li>
+                <li><a href= "ABOUT.HTML">PORTFOLIO</a></li>
+                <li><a href="RESUME.HTML">RESUME</a></li>
+                <li><a href="CONTACT.HTML">CONTACT</a></li>
+            
+            </ul>
         </div>
-    </section>
 
+        <div class="main-content">
+            <button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
+            <section id="main">
+                <div class="CONTENT">
+                    <img src="s4.JPG">
+                    <h1>Hi, I'm [SANDEEP]</h1>
+                    <p>BTech in Computer Science and Engineering</p>
+                    <p>Passionate about technology and software development.</p>
+
+                    <nav class="navbar">
+                        <li>
+                       <a href="https://github.com/MALLASANDEEP/PORTFOLIO" target="_blank">
+                         <i class="fab fa-github"></i>
+                       </a>
+                     </li>
+                
+                     <li>
+                       <a href="https://www.linkedin.com/in/sandeep-malla-67249b297/" target="_blank">
+                         <i class="fab fa-linkedin"></i>
+                       </a>
+                     </li>
+
+                     <li><a href="" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                      </li>
+                    </nav> 
+                </div>
+            </section>      
+        </div>
+    </div>
+    
+    <script>function toggleSidebar() 
+    {
+        var sidebar = document.querySelector('.sidebar');
+        var mainContent = document.querySelector('.main-content');
+        
+        sidebar.classList.toggle('open');
+
+        mainContent.classList.toggle('shifted');
+    }
+    </script>
 </body>
 </html>
